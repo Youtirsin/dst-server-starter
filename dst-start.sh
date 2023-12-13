@@ -161,7 +161,10 @@ function start_server()
   maybe_copy_mod_config
 
   run_shared=(./dontstarve_dedicated_server_nullrenderer_x64)
-  run_shared+=(-console)
+  run_shared+=(-persistent_storage_root "$dontstarve_dir")
+  run_shared+=(-conf_dir ".")
+  # this option is decrecated, use [MSIC] / console_enabled setting instead
+  # run_shared+=(-console)
   run_shared+=(-cluster "$cluster_name")
   run_shared+=(-monitor_parent_process $$)
 
