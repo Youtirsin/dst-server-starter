@@ -55,17 +55,17 @@ function check_config_empty()
 
 function check_for_file()
 {
-	if [ ! -e "$1" ]; then
-		error "missing file: $1"
+  if [ ! -e "$1" ]; then
+    error "missing file: $1"
     return 0
-	fi
+  fi
   return 1
 }
 
 function check_for_file_or_fail()
 {
-	if [ ! -e "$1" ]; then
-		fail "missing file: $1"
+  if [ ! -e "$1" ]; then
+    fail "missing file: $1"
     return 0
 	fi
   return 1
