@@ -35,7 +35,7 @@ function error()
 function fail()
 {
   error $@
-	exit 1
+  exit 1
 }
 
 function check_config_empty()
@@ -67,7 +67,7 @@ function check_for_file_or_fail()
   if [ ! -e "$1" ]; then
     fail "missing file: $1"
     return 0
-	fi
+  fi
   return 1
 }
 
@@ -113,6 +113,9 @@ function install_server()
 
 function ensure_server_installed()
 {
+  info "install or update dst server."
+  install_server
+
   check_for_file "$install_dir/bin64"
   if [[ $? -eq 0 ]]; then
     install_server
